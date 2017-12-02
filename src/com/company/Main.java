@@ -1,8 +1,19 @@
 package com.company;
 
+import Providers.ExchangeRateProvider;
+
+import java.net.MalformedURLException;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        try {
+            ExchangeRateProvider.getURLCurrency("USD");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
