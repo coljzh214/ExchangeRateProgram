@@ -29,6 +29,7 @@ public class ExchangeRateProvider {
 
         return new URL(request);
     }
+
     public String getJSONFile (String reqUrl) {
         BufferedReader reader = null;
         try {
