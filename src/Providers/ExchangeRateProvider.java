@@ -1,5 +1,6 @@
 package Providers;
 
+import javax.xml.ws.spi.http.HttpHandler;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,22 +13,22 @@ import java.net.URL;
 public class ExchangeRateProvider {
 
     String fromCurrency;
+    String toCurrency;
     String key;
-    String[] currencies = {"AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "ZAR", "EUR"};
 
-    public static URL getURLCurrency(String fromCurrency) throws MalformedURLException {
+    protected URL getURL(String fromCurrency, String toCurrency) throws MalformedURLException {
 
         String request;
+        String TAG = HttpHandler.class.getSimpleName();
 
-        request = "https://api.fixer.io/latest?base=" + fromCurrency;
+        this.fromCurrency = fromCurrency;
+        this.toCurrency = toCurrency;
+        this.key = null;
+
+        request = "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency= " + fromCurrency + "&to_currency=" + toCurrency + "&apikey=" + key;
 
         return new URL(request);
     }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> b639fde87c71eaa19b7fca687bc80e7c2ce8064d
     public String getJSONFile (String reqUrl) {
         BufferedReader reader = null;
         try {
