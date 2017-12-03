@@ -21,7 +21,7 @@ public class LineChart {
             System.out.println((cal.get(Calendar.MONTH) + 1)+ "/" + cal.get(Calendar.DAY_OF_MONTH));
         }
         DefaultCategoryDataset line_chart_dataset = new DefaultCategoryDataset();
-        
+
         JFreeChart lineChartObject = ChartFactory.createLineChart(
                 "Value Vs Days","Past 30 Days",
                 "Stock Value",

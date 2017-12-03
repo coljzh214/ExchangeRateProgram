@@ -24,11 +24,10 @@ public class ExchangeRateProvider {
         return new URL(request);
     }
 
-    public String getJSONFile (String reqUrl) {
+    public String getJSONFile (URL reqUrl) {
         BufferedReader reader = null;
         try {
-            URL url = new URL(reqUrl);
-            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            reader = new BufferedReader(new InputStreamReader(reqUrl.openStream()));
             StringBuffer buffer = new StringBuffer();
             int read;
             char[] chars = new char[1024];

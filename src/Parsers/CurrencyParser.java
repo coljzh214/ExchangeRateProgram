@@ -7,7 +7,7 @@ import org.json.JSONObject;
 public class CurrencyParser {
     private CurrencyExchange ce;
 
-    public void parseCurrency(String jsonResponse, String toCurrencyCode) throws JSONException {
+    public Double parseCurrency(String jsonResponse, String toCurrencyCode) throws JSONException {
 
         JSONObject currency = new JSONObject(jsonResponse);
         String fromCurrencyCode = currency.getString("base");
@@ -18,6 +18,8 @@ public class CurrencyParser {
         ce.setFromCurrency(fromCurrencyCode);
         ce.setToCurrency(toCurrencyCode);
         ce.setExchangeRate(exchangeRate);
+
+        return exchangeRate;
     }
 }
 
