@@ -6,8 +6,8 @@ import java.util.Currency;
 
 public class CurrencyExchange {
 
-    private Currency fromCurrency;
-    private Currency toCurrency;
+    private String fromCurrency;
+    private String toCurrency;
     private double exchangeRate;
 
 
@@ -17,25 +17,25 @@ public class CurrencyExchange {
         exchangeRate = 0.0;
     }
 
-    public CurrencyExchange(Currency c1, Currency c2, double rate) {
+    public CurrencyExchange(String c1, String c2, double rate) {
         fromCurrency = c1;
         toCurrency = c2;
         exchangeRate = rate;
     }
 
-    public Currency getFromCurrency() {
+    public String getFromCurrency() {
         return fromCurrency;
     }
 
-    public Currency getToCurrency() {
+    public String getToCurrency() {
         return toCurrency;
     }
 
-    public void setFromCurrency(Currency fromCurrency) {
+    public void setFromCurrency(String fromCurrency) {
         this.fromCurrency = fromCurrency;
     }
 
-    public void setToCurrency(Currency toCurrency) {
+    public void setToCurrency(String toCurrency) {
         this.toCurrency = toCurrency;
     }
 
