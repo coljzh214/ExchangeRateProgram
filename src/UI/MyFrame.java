@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class MyFrame {
     public static void componentsGUI() {
-        JFrame f= new JFrame("Exchange Rate Program");;//creating instance of JFrame
+        final JFrame f= new JFrame("Exchange Rate Program");;//creating instance of JFrame
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Exchange Rate Program");
